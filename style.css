@@ -1,0 +1,199 @@
+body {
+    height: 100%;
+    font-size: large;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+#main_contents {
+    overflow: hidden;
+}
+
+@media (hover: hover) {
+    #contents li details .toggleButton:hover {
+        background-color: rgb(141, 235, 238);
+        color: #000000;
+        transition: 0.2s 0s all;
+        transition-timing-function: ease-in;
+    }
+
+    #contents li details[open] .toggleButton:hover {
+        background-color: #517C8A;
+        color: #ffffff;
+        transition: 0.2s 0s all;
+        transition-timing-function: ease-in;
+    }
+}
+
+#contents li details {
+    background-color: #517C8A;
+    margin-bottom: 3em;
+    padding: 0.4em;
+    border-width: 4px;
+    width: 60%;
+    height: 3em;
+    border-color: #000000;
+    transition: 0.2s 0s height;
+    transition-timing-function: ease-in;
+}
+
+#contents li details summary {
+    border: none;
+    text-align: left;
+    color: #ffffff;
+    font-size: large;
+    padding: 0.7em 4px;
+    list-style: none;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    cursor: pointer;
+}
+
+#contents li details[open] {
+    background-color: rgb(141, 235, 238);
+
+    height: auto;
+    padding: 0.4em;
+    border-width: 4px;
+    width: 60%;
+    border-color: #000000;
+    transition: 0.2s 0s height;
+    transition-timing-function: ease-in;
+}
+
+#contents li details[open] summary {
+    color: #000000;
+}
+
+#contents li a {
+    font: inherit;
+    color: inherit;
+    text-decoration: inherit;
+}
+
+#contents li p{
+    margin-top: 0;
+    margin-bottom: 0;
+    
+}
+
+#contents li :hover p button {
+    background-color: #8debee;
+}
+
+#contents li details div {
+    background-color: #ffffff;
+    display: flex;
+    align-items: stretch;
+}
+
+#contents li details div section {
+    flex: 7;
+
+    padding: 5px;
+    overflow-y: auto;
+}
+
+#contents li details div p {
+    overflow: wrap;
+}
+
+#contents li details div a {
+    flex: 3;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgba(49, 170, 226, 0.9) 50%);
+    background-position: 3px 0;
+    background-size: 200% auto;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contents li details div a p {
+    font-size: larger;
+    text-align: center;
+    color: #333333;
+}
+
+#contents li details div a:hover {
+    background-position: -100% 0;
+}
+
+#contents li details div a:hover p {
+    color: #ffffff;
+}
+
+
+
+.moving_img {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: fit-content;
+    margin: auto 0;
+    left: calc((100vw * (7 / 9) * 0.03) + 3em + ((100vw * (7 / 9) * 0.96 - 6em) * 0.6) + 1rem);
+}
+
+.moving_img img {
+    max-height: 60vh;
+    object-fit: contain;
+}
+
+details ~ .moving_img img {
+    transform: translateX(15vw);
+    opacity: 0.0;
+    transition: all 0.5s ease-in;
+}
+details[open] ~ .moving_img img {
+    transform: translateX(0vw);
+    opacity: 1.0;
+    transition: all 0.5s ease-out;
+}
+
+#c0_pic {
+    width: 40vw;
+}
+
+
+.weak {
+    font-size: 0.8em;
+    color: #808080;
+}
+
+
+@media screen and (max-width: 959px) {
+    #sub_contents {
+        flex: 1;
+    }
+
+    .moving_img {
+        left: calc((100vw * 0.03) + (100vw * 0.96 * 0.05) + ((100vw * 0.96 - (100vw * 0.96 * 0.05) * 2) * 0.6) + 1rem);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #contents li details div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contents li details div a {
+        border-top: 2px solid #31aae2e6;
+    }
+
+    .moving_img {
+        left: calc((100vw * 0.03) + (100vw * 0.96 * 0.02) + ((100vw * 0.96 - (100vw * 0.96 * 0.02) * 2) * 0.6) + 1rem);
+    }
+}
