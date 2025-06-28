@@ -1,0 +1,87 @@
+body {
+    font-family: 'Noto Sans JP', 'BIZ UDGothic', 'メイリオ', 'Meiryo', 'Meiryo UI', sans-serif;
+    color: #333333;
+    line-height: 1.5;
+}
+
+#game {
+    flex: 8;
+}
+
+#fullscreen_game {
+    width: 100%;
+    padding: 6px;
+}
+
+#game iframe {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+#pager {
+    flex: 2;
+    background-color: darkcyan;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    padding: 10% 2em;
+    overflow: auto;
+}
+
+#pager ul {
+    background-color: azure;
+    border-radius: 10px;
+    margin-top: 0;
+    margin-bottom: 10%;
+    list-style: none;
+    padding: 0.1px 0;
+    padding-left: 0;
+}
+#pager ul:last-child {
+    margin-bottom: 0;
+}
+
+#pager ul li {
+    margin: 7px 0;
+}
+
+#pager ul li a {
+    padding: 3px 5px;
+    text-decoration: none;
+}
+#pager ul li a:link {
+    color: #33007b;
+}
+#pager ul li a:visited {
+    color: #33007b;
+}
+#pager ul li a:active {
+    color: #7b0000;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
+html {
+    height: 100%;
+}
+
+@media (orientation: portrait) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    #pager {
+        flex: initial;
+        height: auto;
+        padding: 1.2em 2em;
+    }
+    #pager ul {
+        margin-bottom: 15px;
+    }
+}
