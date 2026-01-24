@@ -1,11 +1,13 @@
 body {
     font-family: 'Noto Sans JP', 'BIZ UDGothic', 'メイリオ', 'Meiryo', 'Meiryo UI', sans-serif;
     color: #333333;
+    background-color: darkcyan;
     line-height: 1.5;
 }
 
 #game {
     flex: 8;
+    background-color: white;
 }
 
 #fullscreen_game {
